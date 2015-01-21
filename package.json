@@ -1,5 +1,5 @@
 {
-  "name": "css-selector",
+  "name": "style-selector",
   "version": "1.0.0",
   "description": "CSS selector constructor.",
   "main": "index.js",
