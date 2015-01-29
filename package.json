@@ -1,6 +1,6 @@
 {
   "name": "style-selector",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "CSS selector constructor.",
   "main": "index.js",
   "scripts": {
