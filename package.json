@@ -8,7 +8,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jonkemp/css-selector"
+    "url": "https://github.com/jonkemp/style-selector"
   },
   "keywords": [
     "css"
@@ -16,9 +16,9 @@
   "author": "Jonathan Kemp <kempdogg@gmail.com> (http://jonkemp.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jonkemp/css-selector/issues"
+    "url": "https://github.com/jonkemp/style-selector/issues"
   },
-  "homepage": "https://github.com/jonkemp/css-selector",
+  "homepage": "https://github.com/jonkemp/style-selector",
   "dependencies": {
     "slick": "^1.12.1"
   },
