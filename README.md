@@ -1,5 +1,7 @@
 # style-selector
 
+[![NPM](https://nodei.co/npm/style-selector.png?downloads=true)](https://nodei.co/npm/style-selector/)
+
 > CSS selector constructor
 
 Uses [Slick](https://github.com/subtleGradient/slick) to parse and tokenize the CSS selectors.
