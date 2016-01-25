@@ -54,15 +54,15 @@ Selector.prototype.parsed = function () {
  */
 
 Selector.prototype.specificity = function () {
-    
+
     function specificity(text, parsed) {
         var expressions = parsed || parse(text),
-        spec = [0, 0, 0, 0],
-        nots = [];
+            spec = [ 0, 0, 0, 0 ],
+            nots = [];
 
         for (var i = 0; i < expressions.length; i++) {
             var expression = expressions[i],
-            pseudos = expression.pseudos;
+                pseudos = expression.pseudos;
 
             // id awards a point in the second column
             if (expression.id) {
