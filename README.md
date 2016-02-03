@@ -1,4 +1,4 @@
-# style-selector
+# style-selector [![Build Status](https://travis-ci.org/jonkemp/style-selector.svg?branch=master)](https://travis-ci.org/jonkemp/style-selector) [![Coverage Status](https://coveralls.io/repos/jonkemp/style-selector/badge.svg?branch=master&service=github)](https://coveralls.io/github/jonkemp/style-selector?branch=master)
 
 [![NPM](https://nodei.co/npm/style-selector.png?downloads=true)](https://nodei.co/npm/style-selector/)
 
