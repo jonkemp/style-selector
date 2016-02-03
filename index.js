@@ -58,11 +58,18 @@ Selector.prototype.specificity = function () {
     function specificity(text, parsed) {
         var expressions = parsed || parse(text),
             spec = [ 0, 0, 0, 0 ],
-            nots = [];
+            nots = [],
+            i,
+            expression,
+            pseudos,
+            p,
+            ii,
+            not,
+            jj;
 
-        for (var i = 0; i < expressions.length; i++) {
-            var expression = expressions[i],
-                pseudos = expression.pseudos;
+        for (i = 0; i < expressions.length; i++) {
+            expression = expressions[i];
+            pseudos = expression.pseudos;
 
             // id awards a point in the second column
             if (expression.id) {
@@ -86,7 +93,7 @@ Selector.prototype.specificity = function () {
             if (pseudos) {
                 spec[3] += pseudos.length;
 
-                for (var p = 0; p < pseudos.length; p++) {
+                for (p = 0; p < pseudos.length; p++) {
                     if (pseudos[p].key === 'not') {
                         nots.push(pseudos[p].value);
                         spec[3]--;
@@ -95,9 +102,9 @@ Selector.prototype.specificity = function () {
             }
         }
 
-        for (var ii = nots.length; ii--;) {
-            var not = specificity(nots[ii]);
-            for (var jj = 4; jj--;) {
+        for (ii = nots.length; ii--;) {
+            not = specificity(nots[ii]);
+            for (jj = 4; jj--;) {
                 spec[jj] += not[jj];
             }
         }
