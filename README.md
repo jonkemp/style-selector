@@ -14,18 +14,57 @@ Install with [npm](https://npmjs.org/package/style-selector)
 npm install --save style-selector
 ```
 
-## Usage
+## Usage v2
+
+```js
+var selector = require('style-selector'),
+    bodySelector = selector('body', [ 0, 0, 0, 1 ]);
+
+console.log(bodySelector);                  // { text: 'body', spec: [ 0, 0, 0, 1 ] }
+console.log(bodySelector.parsed());         // { '0': { combinator: ' ', tag: 'body' }, length: 1 }
+console.log(bodySelector.specificity());    // [ 0, 0, 0, 1 ]
+```
+
+## Usage v1
 
 ```js
 var Selector = require('style-selector'),
     bodySelector = new Selector('body', [ 0, 0, 0, 1 ]);
 
-console.log(selector);                  // { text: 'body', spec: [ 0, 0, 0, 1 ] }
-console.log(selector.parsed());         // { '0': { combinator: ' ', tag: 'body' }, length: 1 }
-console.log(selector.specificity());    // [ 0, 0, 0, 1 ]
+console.log(bodySelector);                  // { text: 'body', spec: [ 0, 0, 0, 1 ] }
+console.log(bodySelector.parsed());         // { '0': { combinator: ' ', tag: 'body' }, length: 1 }
+console.log(bodySelector.specificity());    // [ 0, 0, 0, 1 ]
 ```
 
-## API
+## v2 API
+
+### selector(text, spec)
+
+CSS selector constructor
+
+#### text
+
+Type: `String`  
+Default: `none`
+
+Selector text
+
+#### spec
+
+Type: `Array`  
+Default: `none`
+
+Optional, precalculated specificity
+
+### selector.parsed()
+
+Get parsed selector
+
+### selector.specificity()
+
+Lazy specificity getter
+
+## v1 API
 
 ### Selector(text, spec)
 
