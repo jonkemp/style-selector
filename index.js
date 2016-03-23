@@ -96,7 +96,7 @@ function getSpecificity(text, parsed) {
 
 module.exports = function (text, spec) {
     var tokens,
-        _spec,
+        _spec = spec,
 
         /**
          * Get parsed selector.
@@ -127,7 +127,7 @@ module.exports = function (text, spec) {
     return {
         text: text,
 
-        spec: spec,
+        spec: _spec,
 
         parsed: parsed,
 
