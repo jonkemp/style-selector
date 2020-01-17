@@ -1,10 +1,8 @@
-'use strict';
-
 /**
  * Module dependencies.
  */
 
-var parser = require('slick').parse;
+const parser = require('slick').parse;
 
 /**
 * Parses a selector and returns the tokens.
@@ -30,16 +28,16 @@ function parse(text) {
 */
 
 function getSpecificity(text, parsed) {
-    var expressions = parsed || parse(text),
-        spec = [ 0, 0, 0, 0 ],
-        nots = [],
-        i,
-        expression,
-        pseudos,
-        p,
-        ii,
-        not,
-        jj;
+    const expressions = parsed || parse(text);
+    const spec = [ 0, 0, 0, 0 ];
+    const nots = [];
+    let i;
+    let expression;
+    let pseudos;
+    let p;
+    let ii;
+    let not;
+    let jj;
 
     for (i = 0; i < expressions.length; i++) {
         expression = expressions[i];
@@ -94,35 +92,35 @@ function getSpecificity(text, parsed) {
  * @api public
  */
 
-module.exports = function (text, spec) {
-    var tokens,
-        _spec = spec,
+module.exports = (text, spec) => {
+    let tokens;
+    let _spec = spec;
 
-        /**
-         * Get parsed selector.
-         *
-         * @api public
-         */
+    /**
+     * Get parsed selector.
+     *
+     * @api public
+     */
 
-        parsed = function () {
-            if (!tokens) {
-                tokens = parse(text);
-            }
-            return tokens;
-        },
+    const parsed = () => {
+        if (!tokens) {
+            tokens = parse(text);
+        }
+        return tokens;
+    };
 
-        /**
-         * Lazy specificity getter
-         *
-         * @api public
-         */
+    /**
+     * Lazy specificity getter
+     *
+     * @api public
+     */
 
-        specificity = function () {
-            if (!spec) {
-                _spec = getSpecificity(text, parsed());
-            }
-            return _spec;
-        };
+    const specificity = () => {
+        if (!spec) {
+            _spec = getSpecificity(text, parsed());
+        }
+        return _spec;
+    };
 
     return {
         text: text,
